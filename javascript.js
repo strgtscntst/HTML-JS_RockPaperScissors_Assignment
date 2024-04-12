@@ -48,4 +48,8 @@ function getComputerChoice(){
 //  Function to play 5 rounds
 function playGame(){
     console.log(rockPaperScissors(prompt()))
+    console.log(rockPaperScissors(prompt()))
+    console.log(rockPaperScissors(prompt()))
+    console.log(rockPaperScissors(prompt()))
+    console.log(rockPaperScissors(prompt()))
 }

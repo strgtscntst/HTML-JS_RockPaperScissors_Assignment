@@ -1,28 +1,45 @@
 const playerSelection = "";
 const computerSelection = "";
-const selectionList = ["rock","paper","scissors"];
+let selectionList = ["rock","paper","scissors"];
 
-//  Function to play a round of R-P-S, using passed argument as player & computer input
-function rockPaperScissors(playerSelection.toLowerCase(), computerSelection = getComputerChoice()){
-//      if player=computer draw
-//      if playerRock
-//          if computerpaper - lose
-//          if computerscissor -win
-//      if playerPaper
-//          if computerScissor - lose
-//          if computerRock - win
-//      if playerScissor
-//          if computerRock - lose
-//          if computerPaper - win
-//  return result, outputting computer choice and win/loss/draw
+function rockPaperScissors(playerSelection, computerSelection = getComputerChoice()){
+    console.log(computerSelection);
+    if (playerSelection === computerSelection){
+        return "draw"
+    }
+    if (playerSelection === "rock"){
+        if (computerSelection === "paper"){
+            return "loss"
+        }
+        if (computerSelection === "scissors"){
+            return "win"
+        }
+    }
+    if (playerSelection === "paper"){
+        if (computerSelection === "scissors"){
+            return "loss"
+        }
+        if (computerSelection === "rock"){
+            return "win"
+        }
+    }
+    if (playerSelection === "scissors"){
+        if (computerSelection === "rock"){
+            return "loss"
+        }
+        if (computerSelection === "paper"){
+            return "win"
+        }
+    }
 }
+
 
 //  function to assign computer choice
 function getComputerChoice(){
-    return selectionList[getRandomInt(3)];
+    return selectionList[Math.floor(Math.random() * 3)];
 }
 
 //  Function to play 5 rounds
 function playGame(){
-
+    rockPaperScissors
 }

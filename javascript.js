@@ -2,6 +2,7 @@ const playerSelection = "";
 const computerSelection = "";
 let selectionList = ["rock","paper","scissors"];
 
+// Function to play a single round of Rock-Paper-Scissors
 function rockPaperScissors(playerSelection, computerSelection = getComputerChoice()){
     playerSelection = playerSelection.toLowerCase();
     if(selectionList.includes(playerSelection)){
@@ -12,26 +13,26 @@ function rockPaperScissors(playerSelection, computerSelection = getComputerChoic
         }
         if (playerSelection === "rock"){
             if (computerSelection === "paper"){
-                return "loss"
+                return "You lose! Paper beats Rock!"
             }
             if (computerSelection === "scissors"){
-                return "win"
+                return "You win! Rock beats Scissors!"
             }
         }
         if (playerSelection === "paper"){
             if (computerSelection === "scissors"){
-                return "loss"
+                return "You lose! Scissors beats Paper!"
             }
             if (computerSelection === "rock"){
-                return "win"
+                return "You win! Paper beats Rock!"
             }
         }
         if (playerSelection === "scissors"){
             if (computerSelection === "rock"){
-                return "loss"
+                return "You lose! Rock beats Scissors!"
             }
             if (computerSelection === "paper"){
-                return "win"
+                return "You win! Scissors beats Paper!"
             }
         }
     } else {

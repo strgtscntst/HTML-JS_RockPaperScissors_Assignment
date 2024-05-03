@@ -1,40 +1,22 @@
 const playerSelection = "";
 const computerSelection = "";
-let selectionList = ["rock","paper","scissors"];
+
+// SELECTION_LIST has extra "rock" to allow win condition to check against the values at index and index+1
+const SELECTION_LIST = ["rock","paper","scissors", "rock"];
 
 // Function to play a single round of Rock-Paper-Scissors
 function rockPaperScissors(playerSelection, computerSelection = getComputerChoice()){
     playerSelection = playerSelection.toLowerCase();
-    if(selectionList.includes(playerSelection)){
+    if(SELECTION_LIST.includes(playerSelection)){
         console.log("The computer throws " + computerSelection);
 
         if (playerSelection === computerSelection){
             return "draw"
         }
-        if (playerSelection === "rock"){
-            if (computerSelection === "paper"){
-                return "You lose! Paper beats Rock!"
-            }
-            if (computerSelection === "scissors"){
-                return "You win! Rock beats Scissors!"
-            }
-        }
-        if (playerSelection === "paper"){
-            if (computerSelection === "scissors"){
-                return "You lose! Scissors beats Paper!"
-            }
-            if (computerSelection === "rock"){
-                return "You win! Paper beats Rock!"
-            }
-        }
-        if (playerSelection === "scissors"){
-            if (computerSelection === "rock"){
-                return "You lose! Rock beats Scissors!"
-            }
-            if (computerSelection === "paper"){
-                return "You win! Scissors beats Paper!"
-            }
-        }
+        return computerSelection == SELECTION_LIST[SELECTION_LIST.indexOf(playerSelection)+1] ? 
+             `You LOSE: ${computerSelection} beats ${playerSelection}!!` : 
+             `You WIN: ${playerSelection} beats ${computerSelection}!!`
+        
     } else {
         console.log("Inappropriate input");
     }
@@ -43,14 +25,12 @@ function rockPaperScissors(playerSelection, computerSelection = getComputerChoic
 
 //  function to assign computer choice
 function getComputerChoice(){
-    return selectionList[Math.floor(Math.random() * 3)];
+    return SELECTION_LIST[Math.floor(Math.random() * 3)];
 }
 
 //  Function to play 5 rounds
 function playGame(){
+    for(let i=0; i<5; i++){
     console.log(rockPaperScissors(prompt()))
-    console.log(rockPaperScissors(prompt()))
-    console.log(rockPaperScissors(prompt()))
-    console.log(rockPaperScissors(prompt()))
-    console.log(rockPaperScissors(prompt()))
+    }
 }

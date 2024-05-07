@@ -32,6 +32,7 @@ function rockPaperScissors(playerSelection, computerSelection = getComputerChoic
     } else {
         compChoiceOutput.textContent="You broke me and I'm not sure how..."
     }
+    // score tracking
     if(resultsBox.textContent.includes("WIN")){
         wins += 1;
     }else if(resultsBox.textContent.includes("LOSE")){
@@ -46,12 +47,6 @@ function getComputerChoice(){
     return SELECTION_LIST[Math.floor(Math.random() * 3)];
 }
 
-rockButton.addEventListener("click", ()=>{
-    rockPaperScissors("rock");
-});
-paperButton.addEventListener("click", ()=>{
-    rockPaperScissors("paper");
-});
-scissorsButton.addEventListener("click", ()=>{
-    rockPaperScissors("paper");
-});
+rockButton.onclick = () => rockPaperScissors("rock");
+paperButton.onclick = () => rockPaperScissors("paper");
+scissorsButton.onclick = () => rockPaperScissors("paper");

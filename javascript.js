@@ -28,9 +28,3 @@ function getComputerChoice(){
     return SELECTION_LIST[Math.floor(Math.random() * 3)];
 }
 
-//  Function to play 5 rounds
-function playGame(){
-    for(let i=0; i<5; i++){
-    console.log(rockPaperScissors(prompt()))
-    }
-}
